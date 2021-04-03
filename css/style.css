@@ -1,0 +1,307 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Muller';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #102746;
+}
+
+.wrapper {
+    max-width: 1190px;
+    min-width: 1190px;
+    margin: 0 auto;
+}
+
+.splitter {
+    display: flex;
+    justify-content: center;
+    margin-top: 65px;
+}
+
+/* ---------- BG_Container ---------- */
+
+.bg_container {
+    max-width: 1920px;
+    min-width: 1190px;
+    /* border: 1px solid black; */
+    background-image:
+    url(../img/bg_wood_tile_cirlce_1_left_top.png),
+    url(../img/bg_wood_tile_cirlce_1_left_bottom.png),
+    url(../img/bg_wood_tile_cirlce_1_right_top.png),
+    url(../img/bg_wood_tile_cirlce_1_right_bottom.png),
+    url(../img/bg_wood_title_gorizontal_1.png),
+    url(../img/bg_wood_title_gorizontal_1.png),
+    url(../img/bg_wood_tile_vertical_1.png),
+    url(../img/bg_wood_tile_vertical_1.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 148px, 148px, 148px, 148px, 560px, 560px, 128px, 128px;
+    background-position:
+    top left,
+    bottom left,
+    top right,
+    bottom right,
+    0 -0.3%,
+    0 100.3%,
+    -0.3% 0,
+    100.3% 0;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+    padding-top: 150px;
+}
+
+.header_wrapper {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding-left: 230px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.header_info {
+    min-width: 1270px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 110px
+}
+
+.header_socials_link {
+    text-decoration: none;
+}
+
+.cart {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.cart_img {
+    width: 100px;
+}
+
+.header_nav {
+    margin-left: 510px;
+}
+
+.header_nav_link {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.header_nav_link:hover {
+    opacity: 0.75;
+}
+
+/* ---------- Intro ---------- */
+
+.intro {
+    background: url(../img/img_main.png) no-repeat top;
+    /* transform: translateY(-10%); */
+    margin-bottom: 40px;
+}
+
+.intro_body {
+    padding-top: 780px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro_info {
+    margin-right: 45px;
+}
+
+.intro_title_1 {
+    font-size: 20px;
+}
+
+.intro_title_2 {
+    font-size: 30px;
+}
+
+.intro_button {
+    background: url(../img/button_buy_normal.png) no-repeat center;
+}
+
+.intro_button:hover {
+    background: url(../img/button_buy_active.png) no-repeat center;
+}
+
+.intro_button_div {
+    width: 206px;
+    height: 85px;
+}
+
+/* ---------- About ---------- */
+
+.about {
+    margin-bottom: 80px
+}
+
+.about_body {
+    background: url(../img/image_rolling_pin.png) no-repeat 515px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about_text {
+    font-size: 18px;
+    width: 414px;
+    padding-top: 80px;
+    padding-bottom: 105px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* ---------- Menu ---------- */
+
+.menu {
+    margin-bottom: 60px;
+}
+
+.menu_title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu_cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+}
+
+.card_caption {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+.card_button {
+    background: url(../img/button_buy_normal.png) no-repeat center;
+    background-size: contain;    
+}
+
+.card_button:hover {
+    background: url(../img/button_buy_active.png) no-repeat center;
+    background-size: contain;
+}
+
+.card_button_div {
+    width: 155px;
+    height: 65px;    
+}
+
+.card_price {
+    width: 100px;
+    height: 65px;
+    background: url(../img/bg_price_baloon.png) no-repeat center;
+    background-size: contain;
+    text-align: center;
+}
+
+.card_price_value {
+    font-size: 30px;
+    padding-top: 7px;
+}
+
+.card_price_caption {
+    font-size: 15px;
+}
+
+.card_name {
+    font-size: 23px;
+    text-align: center;
+    margin-top: -20px;  
+}
+
+/* ---------- Reviews ---------- */
+
+.reviews {
+    margin-bottom: 60px;
+}
+
+.reviews_title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.reviews_cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 90px;
+    margin-bottom: 85px;
+}
+
+.reviews_card {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.reviews_card_text {
+    margin-left: 15px;
+}
+
+.reviews_button {
+    background: url(../img/button_review_insta_normal.png) no-repeat center;
+}
+
+.reviews_button:hover {
+    background: url(../img/button_review_insta_active.png) no-repeat center;
+}
+
+.reviews_button_div {
+    width: 488px;
+    height: 74px;
+}
+
+.reviews_button_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+/* ---------- Contacts ---------- */
+
+.contacts {
+    padding-bottom: 300px;
+}
+
+.contacts_title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.contacts_socials {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.contacts_socials_link {
+    padding-right: 5px;
+}
+
+.contacts_info {
+    font-size: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
