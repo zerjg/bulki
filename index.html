@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="fonts/Muller/stylesheet.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <title></title>
 </head>
 <body>
@@ -36,11 +37,26 @@
                         <img src="img/line_dots_vertical.png" alt="" class="header_splitter">
         
                         <div class="header_contacts">
-                            <div class="header_contact_1">
-                                г. Ярославль, пр-т Ленина, 52 993-553
+                            <div class="header_contact">
+                                <p class="header_contact_address">
+                                    <img src="img/icon_small_map.png" alt="" class="header_contact_img">
+                                    г. Ярославль, пр-т Ленина, 52
+                                </p>
+                                <!-- <span style="padding: 0px 10px;"></span> -->
+                                <p class="header_contact_tel">
+                                    <img src="img/icon_small_phone.png" alt="" class="header_contact_img">
+                                    993-553
+                                </p>
                             </div>
-                            <div class="header_contact_2">
-                                ул. Труфанова, 27 992-556
+                            <p></p>
+                            <div class="header_contact">
+                                <p class="header_contact_address">
+                                    ул. Труфанова, 27
+                                </p>
+                                <!-- <span style="padding: 0px 10px;"></span> -->
+                                <p class="header_contact_tel">
+                                    992-556
+                                </p>
                             </div>
                         </div>
 
@@ -49,43 +65,50 @@
                         <div class="header_cart">
                             <div class="cart_body">
                                 <div class="cart_info">
-                                    В корзине 4 позиции на сумму
+                                    В корзине
+                                    <span class="cart_count">
+                                        44
+                                    </span>
+                                    позиции на сумму
                                 </div>
                                 <div class="cart_summary">
-                                    120 рублей
+                                    <span class="cart_total">
+                                        120
+                                    </span>
+                                    рублей
                                 </div>
                             </div>
-                            <div class="cart_img">
-                                <img src="img/icon_basket_full.png" alt="">
+                            <div class="cart_ico">
+                                <a href="#!">
+                                    <img src="img/icon_basket_full.png" alt="" class="cart_img">
+                                </a>
                             </div>
                         </div>
                     </div>
 
-            </div>
+                    <ul class="header_nav">
+                        <li class="header_nav_item">
+                            <a href="#about" class="header_nav_link">
+                                О нас
+                            </a>
+                        </li>
+                        <li class="header_nav_item">
+                            <a href="#menu" class="header_nav_link">
+                                Меню
+                            </a>
+                        </li>
+                        <li class="header_nav_item">
+                            <a href="#reviews" class="header_nav_link">
+                                Отзывы
+                            </a>
+                        </li>
+                        <li class="header_nav_item">
+                            <a href="#contacts" class="header_nav_link">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
 
-            <div class="wrapper">
-                <ul class="header_nav">
-                    <li class="header_nav_item">
-                        <a href="#!" class="header_nav_link">
-                            О нас
-                        </a>
-                    </li>
-                    <li class="header_nav_item">
-                        <a href="#!" class="header_nav_link">
-                            Меню
-                        </a>
-                    </li>
-                    <li class="header_nav_item">
-                        <a href="#!" class="header_nav_link">
-                            Отзывы
-                        </a>
-                    </li>
-                    <li class="header_nav_item">
-                        <a href="#!" class="header_nav_link">
-                            Контакты
-                        </a>
-                    </li>
-                </ul>
             </div>
 
         </div>
@@ -99,7 +122,13 @@
                             Оформи предзаказ и
                         </h2>
                         <h1 class="intro_title_2">
-                            забери свежую выпечку уже через час
+                            <span class="intro_title_color">
+                                забери
+                            </span>
+                            свежую выпечку
+                            <span class="intro_title_color">
+                                уже через час
+                            </span>
                         </h1>
                     </div>
     
@@ -114,7 +143,7 @@
             </div>
         </div>
 
-        <div class="about"><!-- ---------- About ---------- -->
+        <div class="about" id="about"><!-- ---------- About ---------- -->
             <div class="about_wrapper">
                 <div class="about_body">
 
@@ -156,7 +185,7 @@
         </div>
 
 
-        <div class="menu"><!-- ---------- Menu ---------- -->
+        <div class="menu" id="menu"><!-- ---------- Menu ---------- -->
             <div class="wrapper">
 
                 <h2 class="menu_title">
@@ -190,7 +219,7 @@
                                 <div class="card_price_caption">рублей</div>
                             </div>
                         </div>
-                        <h2 class="card_name">Пирожок со шпинатом и творожным сыром</h2>
+                        <h2 class="card_name">Пирог со шпинатом и творожным сыром 1кг</h2>
                     </div>
 
                     <div class="menu_card">
@@ -204,7 +233,7 @@
                                 <div class="card_price_caption">рублей</div>
                             </div>
                         </div>
-                        <h2 class="card_name">Пирожок с вишней</h2>
+                        <h2 class="card_name">Пирог с курицей и грибами </h2>
                     </div>
 
                     <div class="menu_card">
@@ -218,7 +247,7 @@
                                 <div class="card_price_caption">рублей</div>
                             </div>
                         </div>
-                        <h2 class="card_name">Пирожок с вишней</h2>
+                        <h2 class="card_name">Мини пицца с курицей и грибами</h2>
                     </div>
 
                     <div class="menu_card">
@@ -342,7 +371,7 @@
         </div>
         <!-- ---------- Menu End ---------- -->
 
-        <div class="reviews"><!-- ---------- Reviews ---------- -->
+        <div class="reviews" id="reviews"><!-- ---------- Reviews ---------- -->
             <div class="wrapper">
 
                 <h2 class="reviews_title">
@@ -404,7 +433,7 @@
             </div>
         </div>
 
-        <div class="contacts"><!-- ---------- Contacts ---------- -->
+        <div class="contacts" id="contacts"><!-- ---------- Contacts ---------- -->
             <div class="wrapper">
 
                 <h2 class="contacts_title">
@@ -425,18 +454,36 @@
 
                 <div class="contacts_info">
 
-                    <div class="contacts_info_contact_1">
+                    <p class="contacts_info_contact map_1">
+                        <img src="img/icon_big_map.png" alt="" class="contacts_info_img">
                         г. Ярославль, пр-т Ленина, 52<br>
+                        <img src="img/icon_big_phone.png" alt="" class="contacts_info_img">
                         993-553
-                    </div>
-                    <div class="contacts_info_contact_2">
+                    </p>
+                    <p class="contacts_info_contact map_2">
+                        <img src="img/icon_big_map.png" alt="" class="contacts_info_img">
                         г. Ярославль, ул. Труфанова, 27<br>
+                        <img src="img/icon_big_phone.png" alt="" class="contacts_info_img">
                         992-556
-                    </div>
+                    </p>
+
+                    <script>
+                        $('.map_2').click(function(){
+                            $('.contacts_map').addClass('contacts_map_change');
+                        });
+                        $('.map_1').click(function(){
+                            $('.contacts_map').removeClass('contacts_map_change');
+                        });
+                    </script>
 
                 </div>
 
             </div>
+
+            <div class="contacts_map">
+                    
+            </div>
+
         </div>
 
         <div class="footer"><!-- ---------- Footer ---------- -->
@@ -444,25 +491,27 @@
 
                 <ul class="footer_nav">
                     <li class="footer_nav_item">
-                        <a href="#!" class="footer_nav_link">
+                        <a href="#about" class="footer_nav_link">
                             О нас
                         </a>
                     </li>
                     <li class="footer_nav_item">
-                        <a href="#!" class="footer_nav_link">
+                        <a href="#menu" class="footer_nav_link">
                             Меню
                         </a>
                     </li>
                     <li class="footer_nav_item">
-                        <img src="img/logo_small.png" alt="" class="footer_img">
+                        <a href="#top" class="">
+                            <img src="img/logo_small.png" alt="" class="footer_img">
+                        </a>
                     </li>
                     <li class="footer_nav_item">
-                        <a href="#!" class="footer_nav_link">
+                        <a href="#reviews" class="footer_nav_link">
                             Отзывы
                         </a>
                     </li>
                     <li class="footer_nav_item">
-                        <a href="#!" class="footer_nav_link">
+                        <a href="#contacts" class="footer_nav_link">
                             Контакты
                         </a>
                     </li>
@@ -470,10 +519,6 @@
 
             </div>
         </div>
-
-
-
-
 
     </div>
 </body>

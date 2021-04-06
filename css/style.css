@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 *, *::before, *::after {
     box-sizing: inherit;
@@ -28,8 +29,7 @@ body {
 /* ---------- BG_Container ---------- */
 
 .bg_container {
-    /* max-width: 1920px; */
-    min-width: 1190px;
+    /* min-width: 1190px; */
     background-image:
     url(../img/bg_wood_tile_cirlce_1_left_top.png),
     url(../img/bg_wood_tile_cirlce_1_left_bottom.png),
@@ -40,7 +40,7 @@ body {
     url(../img/bg_wood_tile_vertical_1.png),
     url(../img/bg_wood_tile_vertical_1.png);
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat-y, repeat-y;
-    background-size: 148px, 148px, 148px, 148px, 560px, 560px, 128px, 128px;
+    background-size: 138px, 138px, 138px, 138px, 560px, 560px, 128px, 128px;
     background-position:
     top left,
     bottom left,
@@ -64,22 +64,40 @@ body {
 }
 
 .header_info {
-    /* min-width: 1270px; */
     font-size: 17px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: 0 100px 0 120px;
+    padding: 0 100px 0 125px;
     margin-bottom: 110px;
-    /* transform: translateX(10%); */
 }
 
-/* .header_logo {
-    padding-left: 120px;
-} */
+.header_socials {
+    min-width: 122px;
+}
 
 .header_socials_link {
     text-decoration: none;
+}
+
+.header_socials_link:hover {
+    opacity: 0.75;
+}
+
+.header_contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.header_contact_address {
+    white-space: nowrap;
+}
+
+.header_contact_tel {
+    white-space: nowrap;
+    padding-left: 30px;
 }
 
 .header_cart {
@@ -87,12 +105,47 @@ body {
     flex-wrap: nowrap;
 }
 
-.cart_img {
+.cart_body{
+    text-align: right;
+    min-width: 100px;
+    color: orange;
+}
+
+.cart_count {
+    color: black;
+}
+
+.cart_total {
+    color: black;
+}
+
+.cart_ico {
     width: 100px;
+    margin-left: 20px;
+    margin-top: -30px;
+}
+
+.cart_ico::after {
+    display: block;
+    content: '';
+    width: 97px;
+    height: 97px;
+    
+  
+    position: relative;
+    top: -100px;
+    z-index: -1;
+    box-shadow: 0px 30px 20px 0px rgba(34, 60, 80, 0.25);
+    border-radius: 50%;
+}
+
+.cart_img:hover {
+    opacity: 0.85;
 }
 
 .header_splitter {
     height: 20%;
+    margin: 0 5px;
 }
 
 .header_nav {
@@ -101,6 +154,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin-top: -160px;
+    padding-right: 150px;
 }
 
 .header_nav_link {
@@ -128,13 +182,20 @@ body {
 .intro_body {
     padding-top: 780px;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 .intro_info {
     margin-right: 45px;
+    color: orange;
+}
+
+.intro_title_color {
+    color: black;
 }
 
 .intro_title_1 {
@@ -166,7 +227,7 @@ body {
 
 .about_wrapper {
     background: url(../img/image_rolling_pin.png) no-repeat 59.5%;
-    max-width: 1470px;
+    max-width: 1510px;
     margin: 0 auto;
 }
 
@@ -184,12 +245,14 @@ body {
     padding-bottom: 105px;
     line-height: 1.5;
     text-align: justify;
+    margin: 0 20px;
 }
 
 /* ---------- Menu ---------- */
 
 .menu {
     margin-bottom: 60px;
+    padding: 0 150px;
 }
 
 .menu_title {
@@ -200,9 +263,18 @@ body {
 
 .menu_cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     grid-column-gap: 40px;
-    grid-row-gap: 40px;
+    grid-row-gap: 30px;
+    
+}
+
+.menu_card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: top;
+    justify-content: center;
+    max-width: 480px;
 }
 
 .card_caption {
@@ -210,6 +282,7 @@ body {
     flex-wrap: nowrap;
     align-items: center;
     transform: translateY(-50%);
+    justify-content: center;
 }
 
 .card_button {
@@ -245,15 +318,18 @@ body {
 }
 
 .card_name {
-    font-size: 23px;
+    font-size: 25px;
     text-align: center;
-    margin-top: -20px;  
+    margin-top: -20px;
+    max-width: 260px;
+    height: 90px;
 }
 
 /* ---------- Reviews ---------- */
 
 .reviews {
     margin-bottom: 60px;
+    padding: 0 150px;
 }
 
 .reviews_title {
@@ -264,7 +340,7 @@ body {
 
 .reviews_cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
     grid-column-gap: 50px;
     grid-row-gap: 90px;
     margin-bottom: 85px;
@@ -273,10 +349,13 @@ body {
 .reviews_card {
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .reviews_card_text {
     margin-left: 15px;
+    max-width: 600px;
 }
 
 .reviews_button {
@@ -300,7 +379,7 @@ body {
 /* ---------- Contacts ---------- */
 
 .contacts {
-    padding-bottom: 30px;
+    margin-bottom: 70px;
 }
 
 .contacts_title {
@@ -319,12 +398,48 @@ body {
     padding-right: 5px;
 }
 
+.contacts_socials_link:hover {
+    opacity: 0.75;
+}
+
 .contacts_info {
-    font-size: 30px;
+    font-size: 27px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    padding: 0 60px;
+    justify-content: space-evenly;
+    min-width: 1000px;
+    margin: 0 50px;
+}
+
+.contacts_info_contact {
+    line-height: 1.8;
+    padding: 30px;
+}
+
+.contacts_info_contact:hover {
+    background: url(../img/frame_seeds.png) no-repeat center;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.contacts_info_img {
+    padding-right: 10px;
+}
+
+.contacts_map {
+    margin-top: -10px;
+    height: 540px;
+    background: url(../img/image_map_front.png), url(../img/map_round.png), url(../img/image_map_back.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 1170px, 900px, 1350px;
+    background-position: bottom, center, top;
+}
+
+.contacts_map_change {
+    background: url(../img/image_map_front.png), url(../img/map_round_2.png), url(../img/image_map_back.png);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 1170px, 900px, 1350px;
+    background-position: bottom, center, top;
 }
 
 /* ---------- Footer ---------- */
@@ -350,7 +465,7 @@ body {
 }
 
 .footer_nav_link:hover {
-    background: url(../img/line_seeds_gorizontal.png) no-repeat bottom center;
+    background: url(../img/line_seeds_gorizontal.png) no-repeat bottom;
     color: black;
 }
 
