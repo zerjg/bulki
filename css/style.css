@@ -12,7 +12,7 @@ body {
     font-size: 20px;
     line-height: 1.2;
     font-weight: normal;
-    color: #102746;
+    color: #343434;
 }
 
 .wrapper {
@@ -64,7 +64,9 @@ body {
 }
 
 .header_info {
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #51271c;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -74,6 +76,8 @@ body {
 
 .header_socials {
     min-width: 122px;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .header_socials_link {
@@ -108,15 +112,19 @@ body {
 .cart_body{
     text-align: right;
     min-width: 100px;
-    color: orange;
+    color: #d4913a;
 }
 
 .cart_count {
     color: black;
 }
 
+.cart_summary {
+    font-size: 30px;
+}
+
 .cart_total {
-    color: black;
+    color: #51271c;
 }
 
 .cart_ico {
@@ -162,13 +170,14 @@ body {
     padding: 0 15px;
     padding-bottom: 5px;
     text-decoration: none;
+    font-weight: 300;
     font-size: 30px;
-    color: orange;
+    color: #d4913a;
 }
 
 .header_nav_link:hover {
     background: url(../img/line_seeds_gorizontal.png) no-repeat bottom center;
-    color: black;
+    color: #51271c;
 }
 
 /* ---------- Intro ---------- */
@@ -185,25 +194,25 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-left: 150px;
-    padding-right: 150px;
+    padding-left: 130px;
+    padding-right: 130px;
 }
 
 .intro_info {
     margin-right: 45px;
-    color: orange;
+    color: #d4913a;
 }
 
 .intro_title_color {
-    color: black;
+    color: #51271c;
 }
 
 .intro_title_1 {
-    font-size: 20px;
+    font-size: 31px;
 }
 
 .intro_title_2 {
-    font-size: 30px;
+    font-size: 36px;
 }
 
 .intro_button {
@@ -256,7 +265,8 @@ body {
 }
 
 .menu_title {
-    font-size: 30px;
+    font-size: 36px;
+    color: #51271c;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -319,6 +329,7 @@ body {
 
 .card_name {
     font-size: 25px;
+    color: #51271c;
     text-align: center;
     margin-top: -20px;
     max-width: 260px;
@@ -333,7 +344,8 @@ body {
 }
 
 .reviews_title {
-    font-size: 30px;
+    font-size: 36px;
+    color: #51271c;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -383,7 +395,8 @@ body {
 }
 
 .contacts_title {
-    font-size: 30px;
+    font-size: 36px;
+    color: #51271c;
     text-align: center;
     margin-bottom: 25px;
 }
@@ -404,11 +417,13 @@ body {
 
 .contacts_info {
     font-size: 27px;
+    font-weight: 300;
+    color: #51271c;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     min-width: 1000px;
-    margin: 0 50px;
+    margin: 0 90px;
 }
 
 .contacts_info_contact {
@@ -446,6 +461,7 @@ body {
 
 .footer {
     padding-bottom: 210px;
+    font-weight: 300;
 }
 
 .footer_nav {
@@ -460,13 +476,13 @@ body {
     padding: 0 15px;
     padding-bottom: 5px;
     text-decoration: none;
-    font-size: 25px;
-    color: orange;
+    font-size: 30px;
+    color: #d4913a;
 }
 
 .footer_nav_link:hover {
     background: url(../img/line_seeds_gorizontal.png) no-repeat bottom;
-    color: black;
+    color: #51271c;
 }
 
 .footer_img {
