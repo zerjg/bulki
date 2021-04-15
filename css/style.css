@@ -79,7 +79,8 @@ body {
 }
 
 .logo_img {
-    width: 100%;
+    width: 140px;
+    height: auto;
 }
 
 .header_socials {
@@ -138,13 +139,13 @@ body {
 }
 
 .cart_ico {
-    width: 100px;
     margin-left: 20px;
     margin-top: -30px;
 }
 
 .cart_img {
-    width: 75%;
+    width: 75px;
+    height: auto;
 }
 
 .cart_ico::after {
@@ -307,6 +308,7 @@ body {
 
 .card_img {
     width: 200px;
+    height: auto;
 }
 
 .card_caption {
@@ -389,6 +391,7 @@ body {
 
 .reviews_card_img {
     width: 80px;
+    height: auto;
 }
 
 .reviews_card_text {
@@ -521,4 +524,5 @@ body {
 .footer_img {
     margin: 0 20px;
     width: 67px;
+    height: auto;
 }
