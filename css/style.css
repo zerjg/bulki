@@ -35,12 +35,12 @@ body {
     url(../img/bg_wood_tile_cirlce_1_left_bottom.png),
     url(../img/bg_wood_tile_cirlce_1_right_top.png),
     url(../img/bg_wood_tile_cirlce_1_right_bottom.png),
-    url(../img/bg_wood_title_gorizontal_1.png),
-    url(../img/bg_wood_title_gorizontal_1.png),
-    url(../img/bg_wood_tile_vertical_1.png),
-    url(../img/bg_wood_tile_vertical_1.png);
+    url(../img/bg_wood_tile_gorizontal_1.jpg),
+    url(../img/bg_wood_tile_gorizontal_1.jpg),
+    url(../img/bg_wood_tile_vertical_1.jpg),
+    url(../img/bg_wood_tile_vertical_1.jpg);
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-x, repeat-y, repeat-y;
-    background-size: 138px, 138px, 138px, 138px, 560px, 560px, 128px, 128px;
+    background-size: 138px, 138px, 138px, 138px, 950px, 950px, 128px, 128px;
     background-position:
     top left,
     bottom left,
