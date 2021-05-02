@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="fonts/Muller/stylesheet.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="css/style.css?ver=2.5">
+    
     <script src="jquery-3.6.0.min.js"></script>
+    <script src="mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <title>Лялькины Булки</title>
 </head>
 <body>
@@ -67,19 +71,19 @@
                                 <div class="cart_info">
                                     В корзине
                                     <span class="cart_count">
-                                        44
+                                        
                                     </span>
                                     позиции на сумму
                                 </div>
                                 <div class="cart_summary">
                                     <span class="cart_total">
-                                        120
+                                        
                                     </span>
                                     рублей
                                 </div>
                             </div>
                             <div class="cart_ico">
-                                <a href="#!">
+                                <a href="#basket" data-fancybox>
                                     <img src="img/icon_basket_full.png" alt="" class="cart_img">
                                 </a>
                             </div>
@@ -197,7 +201,7 @@
                     <div class="menu_card">
                         <img src="img/item.png" alt="" class="card_img">
                         <div class="card_caption">
-                            <a href="#!" class="card_button">
+                            <a href="#!" class="card_button" data-id="1">
                                 <div class="card_button_div"> </div>
                             </a>
                             <div class="card_price">
@@ -211,7 +215,7 @@
                     <div class="menu_card">
                         <img src="img/item.png" alt="" class="card_img">
                         <div class="card_caption">
-                            <a href="#!" class="card_button">
+                            <a href="#!" class="card_button" data-id="2">
                                 <div class="card_button_div"> </div>
                             </a>
                             <div class="card_price">
@@ -225,7 +229,7 @@
                     <div class="menu_card">
                         <img src="img/item.png" alt="" class="card_img">
                         <div class="card_caption">
-                            <a href="#!" class="card_button">
+                            <a href="#!" class="card_button"  data-id="3">
                                 <div class="card_button_div"> </div>
                             </a>
                             <div class="card_price">
@@ -239,7 +243,7 @@
                     <div class="menu_card">
                         <img src="img/item.png" alt="" class="card_img">
                         <div class="card_caption">
-                            <a href="#!" class="card_button">
+                            <a href="#!" class="card_button"  data-id="4">
                                 <div class="card_button_div"> </div>
                             </a>
                             <div class="card_price">
@@ -521,5 +525,305 @@
         </div>
 
     </div>
+    
+    <div class="basket" id="basket">
+        <div class="basket-items">
+            <div class="item" data-id="1">
+                <div class="item-img">
+                    <img src="https://zerjg.ru/img/item.png">
+                </div>
+                <div class="item-title">
+                    Пирожок с вишней
+                </div>
+                <div class="item-count">
+                    <button class="minus">-</button>
+                    <input type="num" value="1">
+                    <button class="plus">+</button>
+                </div>
+                <div class="item-delete">
+                    <button class="delete">X</button>
+                </div>
+            </div>
+        </div>
+        <div class="basket-form">
+            <form class="onsubmit">
+            <div class="inputs">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="text" name="phone" placeholder="Ваш телефон" required>
+            </div>
+            <div class="inputs">
+                <select name="delivery"> 
+                    <option value="г. Ярославль, пр-т Ленина, 52" selected>г. Ярославль, пр-т Ленина, 52</option>
+                    <option value="г. Ярославль, ул. Труфанова, 27">г. Ярославль, ул. Труфанова, 27</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <textarea name="comments" placeholder="Комментарии"></textarea>
+            </div>
+            <p class="totalsumm">Общая сумма заказа <span class="price"></span></p>
+            <button class="send-order"></button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="success-add" id="success-add">
+        <img src="/img/success.png">
+        <p>Товар в корзине</p>
+        <div class="buttons">
+            <button class="opencard">Открыть корзину</button>
+            <button class="closewindow">Закрыть окно</button>
+        </div>
+    </div>    
+    
+    <div class="success-cart" id="success-cart">
+        <img src="/img/success.png">
+        <p>Заказ успешно отправлен</p>
+        <div class="buttons"> 
+            <button class="closewindow">Закрыть окно</button>
+        </div>
+    </div>
+    <script>
+        (function($){
+            $(".onsubmit").submit(function(e){
+                e.preventDefault();
+                var name = $('input[name="name"]').val(),
+                    phone = $('input[name="phone"]').val(),
+                    delivery = $('select[name="delivery"] option:selected').val(),
+                    comments = $('textarea[name="comments"]').val();   
+                $.ajax({
+                    url: '/basket/basket.php',
+                    type: 'post',
+                    data: {name: name, phone: phone, delivery: delivery, comments: comments, action: 'send'},
+                    success: function(){
+                        $('input[name="name"]').val(''),
+                        $('input[name="phone"]').val(''), 
+                        $('textarea[name="comments"]').val('');   
+                    
+                       $(".cart_count").html('0');
+                       $(".cart_total").html('0');
+                           $.fancybox.close();
+                       $.fancybox.open({src:"#success-cart"});
+                       setTimeout(function(){
+                           $.fancybox.close();
+                       }, 2000)
+                    }
+                });
+                return false;
+            });
+            
+            $(".closewindow").click(function(){
+               $.fancybox.close(); 
+            });
+            
+            $(".opencard").click(function(){
+               $.fancybox.close(); 
+               var item;
+                $.ajax({
+                   url: '/basket/basket.php',
+                   type: 'post',
+                   data: {action: 'get'},
+                   success: function(data) {
+                       $(".basket-items").html(data);
+                       $.ajax({
+                           url: '/basket/basket.php',
+                           type: 'post',
+                           data: {action: 'getsumm'},
+                           success: function(data) {
+                               $(".totalsumm .price").html(data + ' руб');
+                               $(".cart_total").html(data);
+                                $.ajax({
+                                   url: '/basket/basket.php',
+                                   type: 'post',
+                                   data: {action: 'getcount'},
+                                   success: function(data) {
+                                       $(".cart_count").html(data);
+                                   }
+                                }); 
+                
+                           }
+                        }); 
+                   
+                       
+               $.fancybox.open({src:"#basket"}); 
+                   }
+                   });
+                   
+            });
+            
+            $(".card_button").click(function(){
+                var id = $(this).data("id"),
+                    price = $(this).closest(".menu_card").find(".card_price_value").text(),
+                    name = $(this).closest(".menu_card").find(".card_name").text(),
+                    img = $(this).closest(".menu_card").find(".card_img").attr("src");
+                $.ajax({
+                   url: '/basket/basket.php',
+                   type: 'post',
+                   data: {action: 'add', id: id, price: price, img: img, name: name},
+                   success: function(data) {
+                       $.fancybox.open({src:"#success-add"});
+                       
+                       $.ajax({
+                           url: '/basket/basket.php',
+                           type: 'post',
+                           data: {action: 'getsumm'},
+                           success: function(data) {
+                               $(".cart_total").html(data);
+                           }
+                        }); 
+                        
+                        $.ajax({
+                           url: '/basket/basket.php',
+                           type: 'post',
+                           data: {action: 'getcount'},
+                           success: function(data) {
+                               $(".cart_count").html(data);
+                           }
+                        }); 
+                   }
+                });
+                return false;
+            });
+            
+            $('[href="#basket"]').click(function(){
+                var item;
+                $.ajax({
+                   url: '/basket/basket.php',
+                   type: 'post',
+                   data: {action: 'get'},
+                   success: function(data) {
+                       $(".basket-items").html(data);
+                       $.ajax({
+                           url: '/basket/basket.php',
+                           type: 'post',
+                           data: {action: 'getsumm'},
+                           success: function(data) {
+                               $(".totalsumm .price").html(data + ' руб');
+                               $(".cart_total").html(data);
+                                $.ajax({
+                                   url: '/basket/basket.php',
+                                   type: 'post',
+                                   data: {action: 'getcount'},
+                                   success: function(data) {
+                                       $(".cart_count").html(data);
+                                   }
+                                }); 
+                
+                           }
+                        }); 
+                
+                   }
+                }); 
+            });
+            
+            $(document).on('click', '.plus', function(){
+                var id = $(this).closest(".item").data("id"),
+                    counter = $(this).closest(".item-count").find('input');
+                var count = counter.val();
+                count++;
+                counter.val(count);
+                $.ajax({
+                   url: '/basket/basket.php',
+                   type: 'post',
+                   data: {action: 'plus', id: id},
+                   success: function() {
+                        $.ajax({
+                           url: '/basket/basket.php',
+                           type: 'post',
+                           data: {action: 'getsumm'},
+                           success: function(data) {
+                               $(".totalsumm .price").html(data + ' руб');
+                               $(".cart_total").html(data);
+                                $.ajax({
+                                   url: '/basket/basket.php',
+                                   type: 'post',
+                                   data: {action: 'getcount'},
+                                   success: function(data) {
+                                       $(".cart_count").html(data);
+                                   }
+                                }); 
+                
+                           }
+                        }); 
+                   }
+                }); 
+                
+            });
+            
+            $(document).on('click', '.minus', function(){
+                var id = $(this).closest(".item").data("id"),
+                    counter = $(this).closest(".item-count").find('input');
+                var count = counter.val();
+                if (count > 1) {
+                   count--;
+                    counter.val(count);
+                    $.ajax({
+                       url: '/basket/basket.php',
+                       type: 'post',
+                       data: {action: 'minus', id: id},
+                       success: function() {
+                        $.ajax({
+                           url: '/basket/basket.php',
+                           type: 'post',
+                           data: {action: 'getsumm'},
+                           success: function(data) {
+                               $(".totalsumm .price").html(data + ' руб');
+                               $(".cart_total").html(data);
+                           }
+                        }); 
+                       }
+                    });  
+                }
+                    
+                
+            });
+            $(document).on('click', 'button.delete', function(){
+                var id = $(this).closest(".item").data("id");
+                $.ajax({
+                   url: '/basket/basket.php',
+                   type: 'post',
+                   data: {action: 'delete', id: id},
+                   success: function() {
+                       $('.item[data-id="'+id+'"]').remove();
+                       $.ajax({
+                           url: '/basket/basket.php',
+                           type: 'post',
+                           data: {action: 'getsumm'},
+                           success: function(data) {
+                               $(".totalsumm .price").html(data + ' руб');
+                               $(".cart_total").html(data);
+                               $.ajax({
+                                   url: '/basket/basket.php',
+                                   type: 'post',
+                                   data: {action: 'getcount'},
+                                   success: function(data) {
+                                       $(".cart_count").html(data);
+                                   }
+                                }); 
+                           }
+                        }); 
+                   }
+                });  
+            });
+            
+            $.ajax({
+               url: '/basket/basket.php',
+               type: 'post',
+               data: {action: 'getsumm'},
+               success: function(data) {
+                   $(".cart_total").html(data);
+               }
+            }); 
+            
+            $.ajax({
+               url: '/basket/basket.php',
+               type: 'post',
+               data: {action: 'getcount'},
+               success: function(data) {
+                   $(".cart_count").html(data);
+               }
+            }); 
+            $('[name="phone"]').inputmask('+7 (999) 999 99-99');
+        })(jQuery)
+    </script>
 </body>
 </html>

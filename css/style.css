@@ -522,3 +522,150 @@ body {
     width: 67px;
     height: auto;
 }
+ 
+
+
+.basket-items {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 30px;
+}
+
+.item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item-img {
+    max-width: 70px;
+}
+
+.item-img img {
+    width: 100%;
+}
+
+.item-title {
+    font-size: 16px;
+    color: #51271c;
+    text-align: center;
+    width: 175px;
+}
+
+.item-count {
+    max-width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+button.minus, button.plus {
+    width: 30px;
+    height: 30px;
+    border: 0;
+}
+
+input[type="num"] {
+    width: 30px;
+    border: 0;
+    text-align: center;
+    height: 30px;
+}
+
+button.delete {
+    width: 30px;
+    height: 30px;
+    border: 0;
+}
+
+#basket {
+    display: none;
+}
+
+.basket-form {
+    text-align: center;
+}
+p.totalsumm {
+    margin: 15px 0;
+    color: #d4913a;
+    font-size: 18px;
+}
+p.totalsumm span {
+    font-weight: bold;
+    color: #51271c;
+}
+.inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.inputs input {
+    width: 48%;
+    padding: 10px 25px;
+    border: 1px solid #eee;
+}
+
+.inputs select, .inputs textarea {
+    width: 100%;
+    padding: 10px 25px;
+    border: 1px solid #eee;
+    resize: none;
+}
+
+.send-order {
+    background: url(../img/button_buy_normal.png) no-repeat center;
+    background-size: cover;
+    border: 0;
+    width: 150px;
+    height: 50px;
+}
+
+
+div#success-add img, div#success-cart img {
+    width: 50px;
+}
+
+div#success-add, div#success-cart {
+    text-align: center;
+    display: none;
+}
+
+div#success-add p, div#success-cart p {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+button.opencard {
+    padding: 10px;
+    background: #d4913a;
+    color: #fff;
+    border: 0;
+}
+
+button.closewindow {
+    padding: 10px;
+    background: #d4913a;
+    color: #fff;
+    border: 0;
+}
