@@ -147,14 +147,16 @@ if (isset($_POST['action']) && $_POST['action'] == 'get') {
                             '.$value['name'].'
                             <p class="price">'.$value['price'].' руб</p>
                         </div>
-                        <div class="item-count">
-                            <button class="minus">-</button>
-                            <input type="num" readonly value="'.$value['quantity'].'">
-                            <button class="plus">+</button>
-                        </div>
-                        <div class="item-delete">
-                            <button class="delete">X</button>
-                        </div>
+						<div class="item-buttons">
+							<div class="item-count">
+								<button class="minus">-</button>
+								<input type="num" readonly value="'.$value['quantity'].'">
+								<button class="plus">+</button>
+							</div>
+							<div class="item-delete">
+								<button class="delete">X</button>
+							</div>
+						</div>
                     </div>';
     }
     print_r($result);
@@ -196,7 +198,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'send') {
     
     $mailheaders .= "From: Заказ с сайта <noreply@zerjg.ru>\r\n"; 
     // почтовый заголовок, указывает емайл отправителя
-    $to = "izhulanova@yandex.ru";
+    $to = "lyalina-2020@mail.ru";
     $subject = "Заказ с сайта";
     
     mail($to, $subject, $mess, $mailheaders);

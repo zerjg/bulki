@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="fonts/Muller/stylesheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="css/jquery.fancybox.css"/>
     <link rel="stylesheet" href="css/style.css?ver=2.5">
     
-    <script src="jquery-3.6.0.min.js"></script>
-    <script src="mask.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    <script src="libs/mask.js"></script>
+    <script src="libs/jquery.fancybox.min.js"></script>
     <title>Лялькины Булки</title>
 </head>
 <body>
@@ -46,7 +46,6 @@
                                     <img src="img/icon_small_map.png" alt="" class="header_contact_img">
                                     г. Ярославль, пр-т Ленина, 52
                                 </p>
-                                <!-- <span style="padding: 0px 10px;"></span> -->
                                 <p class="header_contact_tel">
                                     <img src="img/icon_small_phone.png" alt="" class="header_contact_img">
                                     993-553
@@ -57,7 +56,6 @@
                                 <p class="header_contact_address">
                                     ул. Труфанова, 27
                                 </p>
-                                <!-- <span style="padding: 0px 10px;"></span> -->
                                 <p class="header_contact_tel">
                                     992-556
                                 </p>
@@ -83,35 +81,128 @@
                                 </div>
                             </div>
                             <div class="cart_ico">
-                                <a href="#basket" data-fancybox>
+                                <a href="#basket" data-fancybox data-options='{"touch" : false}'>
                                     <img src="img/icon_basket_full.png" alt="" class="cart_img">
                                 </a>
                             </div>
                         </div>
+
+                        <div class="header_burger burger">
+                            <div class="burger_line"> </div>
+                            <div class="burger_line"> </div>
+                            <div class="burger_line"> </div>
+                        </div>
                     </div>
 
-                    <ul class="header_nav">
-                        <li class="header_nav_item">
-                            <a href="#about" class="header_nav_link">
-                                О нас
+                    <div class="mob_header_contacts">
+                        <div class="mob_header_contact">
+                            <p class="mob_header_contact_address">
+                                <img src="img/icon_big_map.png" alt="" class="mob_header_contact_img">
+                                г. Ярославль, пр-т Ленина, 52
+                            </p>
+                            <p class="mob_header_contact_tel">
+                                <img src="img/icon_big_phone.png" alt="" class="mob_header_contact_img">
+                                993-553
+                            </p>
+                        </div>
+                        <p></p>
+                        <div class="mob_header_contact">
+                            <p class="mob_header_contact_address">
+                                ул. Труфанова, 27
+                            </p>
+                            <p class="mob_header_contact_tel_bottom">
+                                992-556
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="header_nav">
+                        <div class="mob_header_logo">
+                            <img src="img/logo_big.png" alt="" class="mob_logo_img">
+                        </div>
+                        <ul class="header_list">
+                            <li class="header_nav_item">
+                                <a href="#about" class="header_nav_link">
+                                    О нас
+                                </a>
+                            </li>
+                            <li class="header_nav_item">
+                                <a href="#menu" class="header_nav_link">
+                                    Меню
+                                </a>
+                            </li>
+                            <li class="header_nav_item">
+                                <a href="#reviews" class="header_nav_link">
+                                    Отзывы
+                                </a>
+                            </li>
+                            <li class="header_nav_item">
+                                <a href="#contacts" class="header_nav_link">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="header_nav_close">
+                            <span class="header_nav_close_line"></span>
+                            <span class="header_nav_close_line"></span>
+                        </div>
+
+                        <div class="mob_nav_contacts">
+                            <div class="mob_nav_contact">
+                                <p class="mob_nav_contact_address">
+                                    <img src="img/icon_big_map.png" alt="" class="mob_nav_contact_img">
+                                    г. Ярославль, пр-т Ленина, 52
+                                </p>
+                                <p class="mob_nav_contact_tel">
+                                    <img src="img/icon_big_phone.png" alt="" class="mob_nav_contact_img">
+                                    993-553
+                                </p>
+                            </div>
+                            <p></p>
+                            <div class="mob_nav_contact">
+                                <p class="mob_nav_contact_address">
+                                    <img src="img/icon_big_map.png" alt="" class="mob_nav_contact_img">
+                                    г. Ярославль, ул. Труфанова, 27
+                                </p>
+                                <p class="mob_nav_contact_tel_bottom">
+                                    <img src="img/icon_big_phone.png" alt="" class="mob_nav_contact_img">
+                                    992-556
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mob_header_socials">
+                            <a href="#!" class="mob_header_socials_link">
+                                <img src="img/button_insta.png" alt="" class="mob_header_socials_img">
+                            </a>                            
+                            <a href="#!" class="mob_header_socials_link">
+                                <img src="img/button_vk.png" alt="" class="mob_header_socials_img">
                             </a>
-                        </li>
-                        <li class="header_nav_item">
-                            <a href="#menu" class="header_nav_link">
-                                Меню
+                            <a href="#!" class="mob_header_socials_link">
+                                <img src="img/button_facebook.png" alt="" class="mob_header_socials_img">
                             </a>
-                        </li>
-                        <li class="header_nav_item">
-                            <a href="#reviews" class="header_nav_link">
-                                Отзывы
-                            </a>
-                        </li>
-                        <li class="header_nav_item">
-                            <a href="#contacts" class="header_nav_link">
-                                Контакты
-                            </a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+
+                    
+
+                    <script>
+                        $(document).ready(function(){
+        
+                            $('.burger').click(function() {
+                                $('.header_nav').addClass('header_nav_active');
+                            });
+        
+                            $('.header_nav_close').click(function() {
+                                $('.header_nav').removeClass('header_nav_active');
+                            });
+        
+                            $('.header_nav_link').click(function() {
+                                $('.header_nav').removeClass('header_nav_active');
+                            });
+                        
+                        });
+                    </script>
 
             </div>
 
@@ -129,20 +220,22 @@
                             <span class="intro_title_color">
                                 забери
                             </span>
+                            <span class="intro_title_space">&nbsp;</span>
                             свежую выпечку
+                            <span class="intro_title_space">&nbsp;</span>
                             <span class="intro_title_color">
                                 уже через час
                             </span>
                         </h1>
                     </div>
     
-                    <a href="#!" class="intro_button">
+                    <a href="#menu" class="intro_button">
                         <div class="intro_button_div"> </div>
                     </a>
                 </div>
 
                 <div class="splitter">
-                    <img src="img/line_seeds_gorizontal.png" alt="">
+                    <img src="img/line_seeds_gorizontal.png" alt="" class="splitter_img">
                 </div>
             </div>
         </div>
@@ -183,7 +276,7 @@
                 </div>
 
                 <div class="splitter">
-                    <img src="img/line_seeds_gorizontal.png" alt="">
+                    <img src="img/line_seeds_gorizontal.png" alt="" class="splitter_img">
                 </div>
             </div>
         </div>
@@ -369,7 +462,7 @@
                 </div>
 
                 <div class="splitter">
-                    <img src="img/line_seeds_gorizontal.png" alt="">
+                    <img src="img/line_seeds_gorizontal.png" alt="" class="splitter_img">
                 </div>
             </div>
         </div>
@@ -432,7 +525,7 @@
                 </div>                
 
                 <div class="splitter">
-                    <img src="img/line_seeds_gorizontal.png" alt="">
+                    <img src="img/line_seeds_gorizontal.png" alt="" class="splitter_img">
                 </div>
             </div>
         </div>
@@ -530,18 +623,20 @@
         <div class="basket-items">
             <div class="item" data-id="1">
                 <div class="item-img">
-                    <img src="https://zerjg.ru/img/item.png">
+                    <img src="img/item.png">
                 </div>
                 <div class="item-title">
                     Пирожок с вишней
                 </div>
-                <div class="item-count">
-                    <button class="minus">-</button>
-                    <input type="num" value="1">
-                    <button class="plus">+</button>
-                </div>
-                <div class="item-delete">
-                    <button class="delete">X</button>
+                <div class="item-buttons">
+                    <div class="item-count">
+                        <button class="minus">-</button>
+                        <input type="num" value="1">
+                        <button class="plus">+</button>
+                    </div>
+                    <div class="item-delete">
+                        <button class="delete">X</button>
+                    </div>
                 </div>
             </div>
         </div>
