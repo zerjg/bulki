@@ -733,17 +733,43 @@ div#success-add p, div#success-cart p {
 }
 
 button.opencard {
+    width: 180px;
+    height: 80px;
     padding: 10px;
-    background: #d4913a;
-    color: #fff;
     border: 0;
+    background: url(../img/cart_button_open.png) no-repeat center;
+    background-size: contain;
 }
 
 button.closewindow {
+    width: 180px;
+    height: 80px;
     padding: 10px;
-    background: #d4913a;
-    color: #fff;
     border: 0;
+    background: url(../img/cart_button_close.png) no-repeat center;
+    background-size: contain;
+}
+
+input::-webkit-input-placeholder {color:#51271c;}
+input::-moz-placeholder          {color:#51271c;}
+input:-moz-placeholder           {color:#51271c;}
+input:-ms-input-placeholder      {color:#51271c;}
+
+textarea::-webkit-input-placeholder {color:#51271c;}
+textarea::-moz-placeholder          {color:#51271c;}
+textarea:-moz-placeholder           {color:#51271c;}
+textarea:-ms-input-placeholder      {color:#51271c;}
+
+select {
+    color: #51271c;
+}
+
+.item-buttons button, .item-buttons input {
+    color: #51271c;
+}
+
+.inputs input, .inputs select, .inputs textarea {
+    border: 1px solid #d4913a;
 }
 
 /* ---------- Media ---------- */
@@ -832,7 +858,7 @@ button.closewindow {
     .mob_header_logo {
         display: block;
         width: 110px;
-        margin: 55px auto 62px auto;
+        margin: 38px auto 62px auto;
     }
 
     .mob_logo_img {
@@ -889,6 +915,7 @@ button.closewindow {
         align-items: flex-start;
         margin-top: 0;
         padding-right: 0;
+        margin-bottom: 55px;
     }
 
     .header_nav_item {
