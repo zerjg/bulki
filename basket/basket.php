@@ -198,7 +198,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'send') {
     
     $mailheaders .= "From: Заказ с сайта <noreply@zerjg.ru>\r\n"; 
     // почтовый заголовок, указывает емайл отправителя
-    $to = "lyalina-2020@mail.ru";
+    $to = "example@example.ru";
     $subject = "Заказ с сайта";
     
     mail($to, $subject, $mess, $mailheaders);
